@@ -18,6 +18,7 @@ public class Node {
     private int g;
     private int h;
     
+    
     public Node(Node n){
         this.board = n.getBoard();
         this.previous = n.getPrevious();
@@ -68,10 +69,10 @@ public class Node {
        À la fin quand deux cases sont mal placées il n'y a qu'un mouvement à faire.
        Pour ne pas surestimer h, on retranche 1
        */
-       
+       /*
        if(h>0)
            h--;
-       
+       */
        return h;
     }
     
@@ -82,6 +83,13 @@ public class Node {
     
     public boolean isGoal(){
         if(h1() == 0)
+            return true;
+        else
+            return false;
+    }
+    
+    public boolean equals(Node n){
+        if(this.board.equals(n.board))
             return true;
         else
             return false;
